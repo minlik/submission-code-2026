@@ -1,0 +1,12 @@
+.env
+.DS_Store
+.idea/
+.vscode/
+
+.worktrees/
+
+outputs/
+
+__pycache__/
+*.pyc
+
