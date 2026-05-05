@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+cd "${REPO_ROOT}"
+
 MODEL_URL=""
 API_KEY=""
-MODEL_NAME="DeepSeek-V3.2"
+MODEL_NAME=""
 
 
 AIGC_USER=""
@@ -19,13 +23,13 @@ fi
 
 
 DEFAULT_ENGINE_FILE_ARG=""
-ENGINE_FILE="${ENGINE_FILE:-data/v5_diverse_subset/complex/engine.json}"
+ENGINE_FILE="${ENGINE_FILE:-data/complex/engine.json}"
 if [[ -n "${ENGINE_FILE}" ]]; then
   DEFAULT_ENGINE_FILE_ARG="--default-engine-file ${ENGINE_FILE}"
 fi
 
-DATA_DIR="data/v5_diverse_subset/simple/composite/state_dependent"
-OUT_DIR="outputs/all/run_homeagent_all_context_0429_detail_dsv32_nt"
+DATA_DIR="data/"
+OUT_DIR="outputs/context_run"
 ENV_PATH=".env"
 CONCURRENCY="20"
 MAX_SAMPLES="0"

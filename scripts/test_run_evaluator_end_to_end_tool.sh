@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+cd "${REPO_ROOT}"
+
 MODEL_URL=""
 API_KEY=""
 MODEL_NAME=""
@@ -23,8 +27,8 @@ if [[ -n "${ENGINE_FILE}" ]]; then
   DEFAULT_ENGINE_FILE_ARG="--default-engine-file ${ENGINE_FILE}"
 fi
 
-DATA_DIR="data/simple/atom/clear"
-OUT_DIR="outputs/test"
+DATA_DIR="data/"
+OUT_DIR="outputs/tool_run"
 ENV_PATH=".env"
 CONCURRENCY="20"
 MAX_SAMPLES="0"
