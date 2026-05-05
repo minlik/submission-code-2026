@@ -1,0 +1,99 @@
+# sensor
+- types: 
+  - climate_sensor
+  - human_sensor
+  count_weights: [1, 1, 2, 3, 4, 5, 4, 3, 2, 1]
+  room_tag_weights:
+    indoor: 5
+    outdoor: 1
+
+# vacuum
+- types: 
+  - robot_cleaner
+  - vacuum_cleaner
+  count_weights: [5, 4, 1]
+  room_tag_weights:
+    bedroom: 1
+    public: 5
+    wash: 5
+    outdoor: 2
+
+# media
+- types: 
+  - smart_screen
+  - universal_speaker
+  count_weights: [1, 1, 1]
+  room_tag_weights:
+    public: 5
+    bedroom: 5
+    work: 2
+    entertainment: 2
+
+# light
+- types: 
+  - light
+  - fan_light
+  count_weights: [1, 1, 2, 3, 4, 5, 5, 5, 5, 5]
+  room_tag_weights:
+    indoor: 3
+    outdoor: 1
+
+# oven && rice-cooker
+- types: 
+  - built_in_oven
+  - microwave_steam_oven
+  - rice_cooker
+  count_weights: [5, 4, 1]
+  room_tag_weights:
+    cook: 1
+
+# ac & fan
+- types: 
+  - ac_gateway
+  - floor_ac
+  - fan
+  - fan_light
+  - air_cube
+  count_weights: [0.5, 1, 2, 3, 4, 5, 4, 3, 2, 1]
+  room_tag_weights:
+    bedroom: 3
+    work: 3
+    entertainment: 3
+    public: 1
+
+# cover
+- types: 
+  - cover
+  count_weights: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  room_tag_weights:
+    bedroom: 1
+
+# lock
+- types: 
+  - lock
+  count_weights: [5, 4, 1]
+  room_tag_weights:
+    entrance: 9
+    bedroom: 1
+
+
+# wash machine
+- types: 
+  - front_loader_washer
+  - compound_washer
+  count_weights: [10, 1]
+  room_tag_weights:
+    wash: 10
+    balcony: 2
+    cook: 1
+    guest: 0.5
+
+
+# water heater
+- types: 
+  - electric_water_heater
+  count_weights: [10, 1]
+  room_tag_weights:
+    wash: 1
+    cook: 1
+

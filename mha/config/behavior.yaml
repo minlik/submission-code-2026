@@ -1,0 +1,38 @@
+indoor_climate_sensors: 
+  - air_cube
+  - climate_sensor
+
+
+indoor_livable_temperature:
+  spring: [20, 24]
+  summer: [24, 27]
+  autumn: [20, 23]
+  winter: [18, 21]
+
+
+indoor_livable_humidity:
+  spring: [40, 60]
+  summer: [45, 65]
+  autumn: [45, 60]
+  winter: [40, 50]
+
+
+climate_devices:
+  - types: [ac, ac_gateway, floor_ac, air_cube]
+    warm: true
+    cool: true
+    humidity: true
+    turn_on_prob: 
+      spring: 0.2
+      summer: 0.8
+      autumn: 0.2
+      winter: 0.8
+  - types: [fan, fan_light]
+    warm: false
+    cool: true
+    humidity: false
+    turn_on_prob: 
+      spring: 0.1
+      summer: 0.9
+      autumn: 0.1
+      winter: 0
