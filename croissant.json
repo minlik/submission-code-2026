@@ -1,0 +1,1077 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "sc": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dct": "http://purl.org/dc/terms/",
+    "conformsTo": "dct:conformsTo",
+    "column": "cr:column",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "source": "cr:source",
+    "extract": "cr:extract",
+    "jsonPath": "cr:jsonPath",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "isLiveDataset": "cr:isLiveDataset",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "separator": "cr:separator",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "distribution": "sc:distribution",
+    "citeAs": "cr:citeAs",
+    "contentUrl": "sc:contentUrl",
+    "contentSize": "sc:contentSize",
+    "encodingFormat": "sc:encodingFormat",
+    "includes": "cr:includes"
+  },
+  "@type": "sc:Dataset",
+  "name": "SMH-Bench",
+  "alternateName": "Smart-Home Agent Benchmark",
+  "description": "SMH-Bench is a benchmark for evaluating LLM-driven agents in simulated smart-home environments. It contains 1,100 human-audited, environment-grounded task instances across seven capability categories and 22 fine-grained subcategories, stratified by simple, medium, and complex home configurations.",
+  "url": "https://anonymous.4open.science/r/submission-code-2026-4D77",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "1.0.0",
+  "datePublished": "2026-05-07",
+  "dateModified": "2026-05-07",
+  "inLanguage": [
+    "zh",
+    "en"
+  ],
+  "keywords": [
+    "smart home",
+    "LLM agents",
+    "benchmark",
+    "environment-grounded evaluation",
+    "tool use",
+    "automation",
+    "multi-turn interaction",
+    "personalized memory"
+  ],
+  "creator": [
+    {
+      "@type": "sc:Organization",
+      "name": "Anonymous Authors"
+    }
+  ],
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "Anonymous Authors"
+  },
+  "isAccessibleForFree": true,
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "dct:conformsTo": [
+    "http://mlcommons.org/croissant/1.1",
+    "http://mlcommons.org/croissant/RAI/1.0"
+  ],
+  "citeAs": "https://anonymous.4open.science/r/submission-code-2026-4D77",
+  "citation": "Anonymous Authors. SMH-Bench: Towards Realistic Evaluation of LLM-Driven Agents in Smart-Home Environments. NeurIPS 2026 submission.",
+  "measurementTechnique": {
+    "totalInstances": 1100,
+    "jsonlFiles": 66,
+    "instancesByHomeComplexity": {
+      "complex": 220,
+      "medium": 330,
+      "simple": 550
+    },
+    "instancesByCategory": {
+      "atom": 150,
+      "composite": 250,
+      "ambiguous": 150,
+      "automation": 150,
+      "multiturn": 200,
+      "memory": 100,
+      "query": 100
+    },
+    "instancesBySubcategory": {
+      "ambiguous/intent_scene": 50,
+      "ambiguous/intent_state": 50,
+      "ambiguous/slot_missing": 50,
+      "atom/clear": 50,
+      "atom/colloquial": 50,
+      "atom/noisy": 50,
+      "automation/state": 50,
+      "automation/state_time": 50,
+      "automation/time": 50,
+      "composite/batch_control": 50,
+      "composite/multi_device": 50,
+      "composite/room_dependent": 50,
+      "composite/state_dependent": 50,
+      "composite/top_n": 50,
+      "memory/longterm": 50,
+      "memory/shortterm": 50,
+      "multiturn/continuity": 50,
+      "multiturn/correction": 50,
+      "multiturn/resolution": 50,
+      "multiturn/shift": 50,
+      "query/quantity": 50,
+      "query/status": 50
+    },
+    "observedSampleFields": [
+      "critic",
+      "engine",
+      "entrance",
+      "ground_truth",
+      "history",
+      "initial_chat_history",
+      "initial_query",
+      "intended_query",
+      "memory_hit",
+      "memory_list",
+      "query_idx",
+      "uuid"
+    ]
+  },
+  "distribution": [
+    {
+      "@type": "cr:FileSet",
+      "@id": "smh-bench-jsonl-files",
+      "name": "SMH-Bench JSONL task files",
+      "description": "All JSONL benchmark task files under the data directory.",
+      "encodingFormat": "application/x-ndjson",
+      "includes": "data/**/dataset.jsonl"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-ambiguous-intent-scene-dataset-jsonl",
+      "name": "data/complex/ambiguous/intent_scene/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/ambiguous/intent_scene/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "16387 B",
+      "sha256": "d5c2e2bd41b75acafc4e580b742b3ae484a1d0bb178a5d2dd188fecc63a035b4"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-ambiguous-intent-state-dataset-jsonl",
+      "name": "data/complex/ambiguous/intent_state/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/ambiguous/intent_state/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "8984 B",
+      "sha256": "9d862572115578ffd17c67a06846e4eecac83e9dd3da8a274b2104d3b231adcc"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-ambiguous-slot-missing-dataset-jsonl",
+      "name": "data/complex/ambiguous/slot_missing/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/ambiguous/slot_missing/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "9320 B",
+      "sha256": "23fe904c6cdefd05b82a1d5ded5c700b09578b3eaa563396e194b30a7023fa3b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-atom-clear-dataset-jsonl",
+      "name": "data/complex/atom/clear/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/atom/clear/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "4971 B",
+      "sha256": "6718c73ccab35e3e659f44cb5a8fc411f3bac23f96e22e065b0ab84094bb3cb9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-atom-colloquial-dataset-jsonl",
+      "name": "data/complex/atom/colloquial/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/atom/colloquial/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "5513 B",
+      "sha256": "9530df04ade1c2a36ecb9249e0c0f34375a31003bc346d5fd9579669450e28af"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-atom-noisy-dataset-jsonl",
+      "name": "data/complex/atom/noisy/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/atom/noisy/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "5660 B",
+      "sha256": "6ba46094ba2c10890028b61d03d980b601b4c4da9c1864334b12dcbb2dd67ceb"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-automation-state-dataset-jsonl",
+      "name": "data/complex/automation/state/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/automation/state/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "12778 B",
+      "sha256": "57324df8feddd3e63163fd25844f1a31ec804c4751ddc4c7e97014a84fea0dfd"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-automation-state-time-dataset-jsonl",
+      "name": "data/complex/automation/state_time/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/automation/state_time/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "9805 B",
+      "sha256": "bfb062127ac951d14ca5921432ee9b577d060a8df93f8b5264f2e2ed314219e2"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-automation-time-dataset-jsonl",
+      "name": "data/complex/automation/time/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/automation/time/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "12666 B",
+      "sha256": "0c7bf3b6ce3eb44fc79903e6282797facfc90d94c41b47ce54341836252a43bf"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-composite-batch-control-dataset-jsonl",
+      "name": "data/complex/composite/batch_control/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/composite/batch_control/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "18086 B",
+      "sha256": "d836a212efb8638c97449346b4a40f5767b4588df50e10ee8d49c9c7ef08a036"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-composite-multi-device-dataset-jsonl",
+      "name": "data/complex/composite/multi_device/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/composite/multi_device/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "17945 B",
+      "sha256": "2e7e420f16dbb7d08775b98b77298d52701885b9da358788ba91cbc94f14b563"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-composite-room-dependent-dataset-jsonl",
+      "name": "data/complex/composite/room_dependent/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/composite/room_dependent/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "15675 B",
+      "sha256": "bfe4e0afadd9213d3385e444efd3dc651d189fcf047b77baa22c5a9f89e7f92e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-composite-state-dependent-dataset-jsonl",
+      "name": "data/complex/composite/state_dependent/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/composite/state_dependent/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "12169 B",
+      "sha256": "2840d1686817d1d3893328edefbac5509a63ca9456fdeebcf3df6a2da84f309b"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-composite-top-n-dataset-jsonl",
+      "name": "data/complex/composite/top_n/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/composite/top_n/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "11163 B",
+      "sha256": "d5bdfb2fa756f60e81bbbb7a101de35fb56959898e6c83991b624fc8145cfa15"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-engine-json",
+      "name": "data/complex/engine.json",
+      "description": "Shared complex-home engine snapshot in JSON format.",
+      "contentUrl": "data/complex/engine.json",
+      "encodingFormat": "application/json",
+      "contentSize": "905915 B",
+      "sha256": "72d64c5154f706312476ba629318f97679f3066f02d785c236801fc0ab03a5fb"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-memory-longterm-dataset-jsonl",
+      "name": "data/complex/memory/longterm/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/memory/longterm/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "17462 B",
+      "sha256": "3fd4acb92b32de715837cd400eedede39919e372595541da47329b1c8d9f22f1"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-memory-shortterm-dataset-jsonl",
+      "name": "data/complex/memory/shortterm/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/memory/shortterm/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "5451559 B",
+      "sha256": "35c8ad0356eee8b419238c228e0918e004246cc6e3d9895583dfeb08eec4ad80"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-multiturn-continuity-dataset-jsonl",
+      "name": "data/complex/multiturn/continuity/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/multiturn/continuity/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "5438512 B",
+      "sha256": "56552e8f789c2f0d4b5029abb96d6eb6bfbd922c521bfcfb609980957015ab59"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-multiturn-correction-dataset-jsonl",
+      "name": "data/complex/multiturn/correction/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/multiturn/correction/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "5438616 B",
+      "sha256": "89a81c6668efecc5901debc2ba7d987a024efd6fc15185bd705a031c4e569526"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-multiturn-resolution-dataset-jsonl",
+      "name": "data/complex/multiturn/resolution/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/multiturn/resolution/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "5438361 B",
+      "sha256": "8156cc869c5282e9b55a8250570ab34169145db032076223de3e4827e7011190"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-multiturn-shift-dataset-jsonl",
+      "name": "data/complex/multiturn/shift/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/multiturn/shift/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "5438563 B",
+      "sha256": "304cc0106456f91ed585bd3a3e29226dfdf29789386e1229c8aff869b6b57d29"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-query-quantity-dataset-jsonl",
+      "name": "data/complex/query/quantity/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/query/quantity/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "4344 B",
+      "sha256": "ca0f0ee0e4a8a324dcb9455db6cfac7c69691124d34532c9ca83e198602f687f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-complex-query-status-dataset-jsonl",
+      "name": "data/complex/query/status/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/complex/query/status/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "4245 B",
+      "sha256": "92930cf053f307fef44bbb0e29b814952f369d65286060aba644aa55539872d0"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-ambiguous-intent-scene-dataset-jsonl",
+      "name": "data/medium/ambiguous/intent_scene/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/ambiguous/intent_scene/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2924425 B",
+      "sha256": "6c9779598127f5eb948cee2657c09417d975fd991efc4de26b49246262a1bc26"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-ambiguous-intent-state-dataset-jsonl",
+      "name": "data/medium/ambiguous/intent_state/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/ambiguous/intent_state/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2790224 B",
+      "sha256": "fcad50338fe8f313150525d83450fd946642df942a6ed7e0f55d15106eb55b58"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-ambiguous-slot-missing-dataset-jsonl",
+      "name": "data/medium/ambiguous/slot_missing/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/ambiguous/slot_missing/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2805779 B",
+      "sha256": "3e65ad541eb4154299a181720245f9018d2eb810f936a5da5995106c4b0d62b9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-atom-clear-dataset-jsonl",
+      "name": "data/medium/atom/clear/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/atom/clear/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2731690 B",
+      "sha256": "ef6bb77754ca35f895aa3540448a923c1a597c19e535a6880546a10183a30886"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-atom-colloquial-dataset-jsonl",
+      "name": "data/medium/atom/colloquial/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/atom/colloquial/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3128875 B",
+      "sha256": "3f53812a96b2b89e0c7a9361da37c7d17f6d6fbde09a25bd32a3d7f7b16a1745"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-atom-noisy-dataset-jsonl",
+      "name": "data/medium/atom/noisy/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/atom/noisy/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2844279 B",
+      "sha256": "74642f74c6b441a23aafb834a7d711a74d63fb1690c73f7e956c14c401fa5f62"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-automation-state-dataset-jsonl",
+      "name": "data/medium/automation/state/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/automation/state/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2872997 B",
+      "sha256": "7b33f083376847db76f5090083fd0c5883ca732c39123357486ef8e7035c069e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-automation-state-time-dataset-jsonl",
+      "name": "data/medium/automation/state_time/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/automation/state_time/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3006664 B",
+      "sha256": "e34e0eefb7ce285d7ee3d0be25f338d367be10051b45bed72b6433098f0b5cce"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-automation-time-dataset-jsonl",
+      "name": "data/medium/automation/time/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/automation/time/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3053648 B",
+      "sha256": "7e650690d8b64985bba57323598939c179805718cbf17fc4d3e25e27e800cdfa"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-composite-batch-control-dataset-jsonl",
+      "name": "data/medium/composite/batch_control/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/composite/batch_control/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3159173 B",
+      "sha256": "82cfb970fd1e48c3cac9ca57b4a4905fd6ce3551efd8ae4bd5188501a7f39fa7"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-composite-multi-device-dataset-jsonl",
+      "name": "data/medium/composite/multi_device/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/composite/multi_device/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2547440 B",
+      "sha256": "29cdccb520d16691c4053e16cd68e79f06e7b8ff85b348ebd905fdc2c08bebd3"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-composite-room-dependent-dataset-jsonl",
+      "name": "data/medium/composite/room_dependent/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/composite/room_dependent/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2931255 B",
+      "sha256": "4794463090ee74e01562657c056dfd5cac659b564e4a62296e2d55abeb89b550"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-composite-state-dependent-dataset-jsonl",
+      "name": "data/medium/composite/state_dependent/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/composite/state_dependent/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2708664 B",
+      "sha256": "33fd9b706dc7dc9e5d5a7c7c8c9d73619174c042188b241da85dea590a96660f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-composite-top-n-dataset-jsonl",
+      "name": "data/medium/composite/top_n/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/composite/top_n/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2944216 B",
+      "sha256": "35441a9e17fcc38bc80d9b2537040192d7cc1bb62785d959428e2c9860832e4a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-memory-longterm-dataset-jsonl",
+      "name": "data/medium/memory/longterm/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/memory/longterm/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3269084 B",
+      "sha256": "47d4ca62849119c8ee601202a26a304cb093b2da8fac904e2e330be34f69a89e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-memory-shortterm-dataset-jsonl",
+      "name": "data/medium/memory/shortterm/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/memory/shortterm/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3178194 B",
+      "sha256": "fd0d98f82b670c0495a9525d21f39f966159c46ed64718e87e2c2c1291d20010"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-multiturn-continuity-dataset-jsonl",
+      "name": "data/medium/multiturn/continuity/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/multiturn/continuity/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2972658 B",
+      "sha256": "44f4b6b91f128da4fce6bb2a20baab65afab26dfe275125ffd89ff3762d4a6db"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-multiturn-correction-dataset-jsonl",
+      "name": "data/medium/multiturn/correction/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/multiturn/correction/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3127329 B",
+      "sha256": "b8640e035dc306b50b5b8cd5adcff11eaafd1b908c372bba195bb99b5a77fb80"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-multiturn-resolution-dataset-jsonl",
+      "name": "data/medium/multiturn/resolution/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/multiturn/resolution/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3084603 B",
+      "sha256": "278ba48fca8c2cc81266456d3efd5cdde594c2b2736d83d4789c5ce2ff166b32"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-multiturn-shift-dataset-jsonl",
+      "name": "data/medium/multiturn/shift/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/multiturn/shift/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3106694 B",
+      "sha256": "2493b4a456b66e5dbfd614e85d17256c8054a4932e2fda7db9960abb93d2fa8d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-query-quantity-dataset-jsonl",
+      "name": "data/medium/query/quantity/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/query/quantity/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "3135519 B",
+      "sha256": "fbae799ee72bf1ea2606ec65b93a3d410bd0effd3b56a49a6b0d3988a0d53b95"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-medium-query-status-dataset-jsonl",
+      "name": "data/medium/query/status/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/medium/query/status/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "2767283 B",
+      "sha256": "14de015505befd6157cb4989907b63b507754574fbce79578ec69bc3bd910e7c"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-ambiguous-intent-scene-dataset-jsonl",
+      "name": "data/simple/ambiguous/intent_scene/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/ambiguous/intent_scene/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "568698 B",
+      "sha256": "e998eb33075203aeccd5348619a659c116eaf648fbeef7512414530975bdc13e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-ambiguous-intent-state-dataset-jsonl",
+      "name": "data/simple/ambiguous/intent_state/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/ambiguous/intent_state/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "575680 B",
+      "sha256": "97d1985fefa2bda602a455250b6b7467e7298f36800b52951f1c192458dcb816"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-ambiguous-slot-missing-dataset-jsonl",
+      "name": "data/simple/ambiguous/slot_missing/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/ambiguous/slot_missing/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "597093 B",
+      "sha256": "c9c3cdafeadd67f2150b99952a455f3a9fb8780f1ed50c56192b91f4d02583c9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-atom-clear-dataset-jsonl",
+      "name": "data/simple/atom/clear/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/atom/clear/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "521060 B",
+      "sha256": "57c7a40a3c30126e387536e3327da71449ebde502133bcf439d4402e9e68c668"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-atom-colloquial-dataset-jsonl",
+      "name": "data/simple/atom/colloquial/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/atom/colloquial/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "577146 B",
+      "sha256": "0ba4d8158909485c84e78fe839bdd3499cb9256c16b6b00956dfc7a1f4eb8879"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-atom-noisy-dataset-jsonl",
+      "name": "data/simple/atom/noisy/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/atom/noisy/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "413002 B",
+      "sha256": "ca6ce60dab88ed203430ea4c65414d5d471431b31b89ff95154be6c947184105"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-automation-state-dataset-jsonl",
+      "name": "data/simple/automation/state/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/automation/state/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "541651 B",
+      "sha256": "3a67537d46770e41497d81b08d40408a38942038ef04f68c35d33af9bac257ff"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-automation-state-time-dataset-jsonl",
+      "name": "data/simple/automation/state_time/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/automation/state_time/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "718506 B",
+      "sha256": "06224338fd224f78341f587b046af80dc20b571f769a292e188d886c761961d8"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-automation-time-dataset-jsonl",
+      "name": "data/simple/automation/time/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/automation/time/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "550503 B",
+      "sha256": "b95ccae96217b433bfdfe56a17a8b974e2c44edacfdf25823482e9a74d5cc124"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-composite-batch-control-dataset-jsonl",
+      "name": "data/simple/composite/batch_control/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/composite/batch_control/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "574250 B",
+      "sha256": "4c121bfa7fdc62c68e34fcc53d2a12d40996868fac83eb1c893ce591ce3379b4"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-composite-multi-device-dataset-jsonl",
+      "name": "data/simple/composite/multi_device/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/composite/multi_device/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "650855 B",
+      "sha256": "63970042fc4a0434e8341481e125eeb24982a952ea9cc25d223b50a89e71808a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-composite-room-dependent-dataset-jsonl",
+      "name": "data/simple/composite/room_dependent/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/composite/room_dependent/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "616828 B",
+      "sha256": "9ae2d11cf7154e3002e29f91e45b67f480abe3bca9837f02e99eda042a266393"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-composite-state-dependent-dataset-jsonl",
+      "name": "data/simple/composite/state_dependent/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/composite/state_dependent/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "687276 B",
+      "sha256": "4d9f3ffa66734f95b15127694b6a7195f1f95304ead5cc71302f1709a913e014"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-composite-top-n-dataset-jsonl",
+      "name": "data/simple/composite/top_n/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/composite/top_n/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "467002 B",
+      "sha256": "d2ab40a1afd13c303f467747d7f4029c26c6b00a318cf08ba35c762d11733909"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-memory-longterm-dataset-jsonl",
+      "name": "data/simple/memory/longterm/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/memory/longterm/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "596403 B",
+      "sha256": "534f6296aae145fd24aee98ea424e5339e6eba7ffb5ad7f4ce8455947466cb13"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-memory-shortterm-dataset-jsonl",
+      "name": "data/simple/memory/shortterm/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/memory/shortterm/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "580209 B",
+      "sha256": "5fe68562bd41689e2cb65ce9818e6654c24ea221f2361c78a7d72bff2b104793"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-multiturn-continuity-dataset-jsonl",
+      "name": "data/simple/multiturn/continuity/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/multiturn/continuity/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "480010 B",
+      "sha256": "4973b1fb7b46a351aa28c1107fab0f96baebcdd7550869618a66c9f76995eee5"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-multiturn-correction-dataset-jsonl",
+      "name": "data/simple/multiturn/correction/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/multiturn/correction/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "536631 B",
+      "sha256": "80cde047503aaa982b56337a741731a2c736220c3c7d70cf355eec9a62b8c799"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-multiturn-resolution-dataset-jsonl",
+      "name": "data/simple/multiturn/resolution/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/multiturn/resolution/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "638917 B",
+      "sha256": "e37527b8e2b34af53f1eeb922438c2bcb0757b74bd86b20c64c00bccdec59a4d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-multiturn-shift-dataset-jsonl",
+      "name": "data/simple/multiturn/shift/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/multiturn/shift/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "614886 B",
+      "sha256": "41a64ecf2a83a21e3d4e105b5ed7b617eaaa45f195b61efb908a0f68cffe22ec"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-query-quantity-dataset-jsonl",
+      "name": "data/simple/query/quantity/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/query/quantity/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "457951 B",
+      "sha256": "f8dac8bc410d51347e7c454c9f3a6410812a6f95e6fd6f14078ac9ca999cd94e"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file-data-simple-query-status-dataset-jsonl",
+      "name": "data/simple/query/status/dataset.jsonl",
+      "description": "SMH-Bench task instances in JSONL format.",
+      "contentUrl": "data/simple/query/status/dataset.jsonl",
+      "encodingFormat": "application/x-ndjson",
+      "contentSize": "485138 B",
+      "sha256": "4accffed04f0d9f8e599575ccd8c23a00616f7de90681aece8b0680d6b850a78"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "smh-bench-task-instances",
+      "name": "SMH-Bench task instances",
+      "description": "One JSON object per benchmark instance. Each instance contains a user instruction, optional dialogue history and memory, an executable home engine snapshot or fallback engine, ground-truth labels, and task-specific evaluation criteria.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/uuid",
+          "name": "uuid",
+          "description": "Stable unique identifier for the benchmark instance.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.uuid"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/query_idx",
+          "name": "query_idx",
+          "description": "Index of the query within its source subset.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.query_idx"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/initial_query",
+          "name": "initial_query",
+          "description": "Initial natural-language user instruction.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.initial_query"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/history",
+          "name": "history",
+          "description": "Reference dialogue trajectory for multi-turn or clarification tasks.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.history"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/initial_chat_history",
+          "name": "initial_chat_history",
+          "description": "Prior dialogue context needed by context-aware tasks when present.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.initial_chat_history"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/memory_list",
+          "name": "memory_list",
+          "description": "User-memory entries used by memory-grounded tasks when present.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.memory_list"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/memory_hit",
+          "name": "memory_hit",
+          "description": "Memory entries expected to be relevant when present.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.memory_hit"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/entrance",
+          "name": "entrance",
+          "description": "Optional entry device identifier for tool-based evaluation.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.entrance"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/engine",
+          "name": "engine",
+          "description": "Executable serialized HomeEnv state when stored inline.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.engine"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/ground_truth",
+          "name": "ground_truth",
+          "description": "Target labels, automation conditions, or expected query response.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.ground_truth"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/critic",
+          "name": "critic",
+          "description": "Boolean evaluator predicate over final home state when applicable.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.critic"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "smh-bench-task-instances/intended_query",
+          "name": "intended_query",
+          "description": "Resolved intended query for selected ambiguous cases when present.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "smh-bench-jsonl-files"
+            },
+            "extract": {
+              "jsonPath": "$.intended_query"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "homeenv-engine",
+      "name": "HomeEnv engine snapshot",
+      "description": "Serialized smart-home state used as the shared fallback engine for complex tasks. It contains room topology, devices, attributes, services, and current values.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "homeenv-engine/home",
+          "name": "home",
+          "description": "Root home object containing rooms and devices.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "file-data-complex-engine-json"
+            },
+            "extract": {
+              "jsonPath": "$.home"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "rai:dataLimitations": [
+    "The benchmark uses simulated smart-home environments rather than physical homes, so it does not capture real sensor noise, network latency, vendor-specific device behavior, device failures, or safety-critical recovery policies.",
+    "The tasks focus on language-driven decision making over structured home states. The dataset does not evaluate multimodal perception, physical manipulation, continuous adaptation to real users, or long-horizon household learning.",
+    "The benchmark is intended for evaluation and diagnosis of smart-home agents, not for direct deployment decisions in safety-critical or privacy-sensitive homes."
+  ],
+  "rai:dataBiases": [
+    "Task instructions and reference trajectories were generated with LLM assistance and then validated and audited, so the language distribution may reflect the prompting templates, generator preferences, and Chinese-centric household naming patterns.",
+    "Device types, room layouts, and routines are designed to stress benchmark capabilities and may not represent all geographic regions, cultures, accessibility needs, household sizes, or smart-home ecosystems.",
+    "The category distribution intentionally allocates more instances to complex reasoning tasks, so aggregate scores should be interpreted together with category-level and home-complexity-level results."
+  ],
+  "rai:personalSensitiveInformation": [
+    "The released benchmark does not contain real household logs, real user identities, addresses, demographic attributes, health records, or private sensor traces.",
+    "Memory entries and dialogue histories are synthetic artifacts created for evaluation of preference and context reasoning. They should not be interpreted as real user data."
+  ],
+  "rai:dataUseCases": [
+    "Recommended uses include evaluating LLM-driven smart-home agents, comparing direct reasoning and tool-interactive protocols, diagnosing state grounding failures, testing automation-rule construction, and studying ambiguity handling, multi-turn context tracking, personalized memory use, and environment-grounded querying.",
+    "The dataset is not recommended for training deployable home-control systems without additional real-world validation, safety review, user-consent mechanisms, access control, and confirmation policies for high-impact actions."
+  ],
+  "rai:dataSocialImpact": "SMH-Bench may improve smart-home agent reliability by exposing failures before deployment, especially failures in state grounding, clarification policy, automation synthesis, and unintended device changes. Misuse risks include overclaiming readiness for real-home deployment or optimizing agents for simulated tasks while ignoring privacy, safety, security, and accessibility requirements in real households. The release mitigates these risks by using synthetic environments and by documenting intended and non-intended uses.",
+  "rai:hasSyntheticData": true,
+  "prov:wasDerivedFrom": [
+    {
+      "@type": "sc:CreativeWork",
+      "name": "Synthetic HomeEnv smart-home state space and task templates",
+      "url": "https://anonymous.4open.science/r/submission-code-2026-4D77"
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    "Home instance construction: simple and medium tasks are paired with independently generated smart-home environments; complex tasks use a shared large-scale home with 31 nested rooms and 135 devices.",
+    "Task and instruction generation: GPT-5-assisted prompts generated structured task records and natural-language user instructions from serialized home states, target categories, and task-specific constraints.",
+    "Simulator validation: HomeEnv checked device existence, operation support, argument validity, automation triggers, query answers, and replay consistency between labels, critics, and executable home states.",
+    "Human audit: samples were manually reviewed for instruction naturalness, category alignment, ground-truth consistency, clarification appropriateness, and absence of context or memory conflicts."
+  ]
+}
